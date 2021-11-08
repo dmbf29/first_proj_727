@@ -1,0 +1,17 @@
+# New app
+rails new name --options
+
+# Launch server
+rails s
+
+# Routes
+VERB '/path', to: 'controller#action', as: :prefix
+
+# Generate
+rails g thing name (options)
+
+# Order
+Model/DB -> Routes -> Controller -> View
+
+# Check Routes
+rails routes

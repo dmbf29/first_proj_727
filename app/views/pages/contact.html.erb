@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Contact</h1>
+
+  <%# Form needs 2 things %>
+  <%# http verb(method) and the path(action) %>
+  <%# search for a member %>
+  <form action="/contact" method="get">
+    <label for="">Member</label>
+    <%# the name of an input is the key in the params %>
+    <input type="text" name='member' value='<%= params[:member] %>'>
+    <input type="text" name='city' >
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="submit" class="btn btn-primary">
+  </form>
+
+
+  <ul>
+    <% if @members.any? %>
+      <% @members.each do |member| %>
+        <li><%= member.capitalize %></li>
+      <% end %>
+    <% else %>
+      <li>No members found...</li>
+    <% end %>
+  </ul>
+
+
+
+  <p><%= link_to '🏠', root_path %></p>
+</div>
